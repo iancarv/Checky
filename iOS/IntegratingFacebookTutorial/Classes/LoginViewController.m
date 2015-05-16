@@ -24,7 +24,7 @@
 #import <Parse/Parse.h>
 #import <ParseFacebookUtils/PFFacebookUtils.h>
 
-#import "UserDetailsViewController.h"
+#import "PromocoesViewController.h"
 
 @implementation LoginViewController
 
@@ -94,7 +94,7 @@
 #pragma mark UserDetailsViewController
 
 - (void)_presentUserDetailsViewControllerAnimated:(BOOL)animated {
-    UserDetailsViewController *detailsViewController = [[UserDetailsViewController alloc] initWithStyle:UITableViewStyleGrouped];
+    PromocoesViewController *detailsViewController = [[PromocoesViewController alloc] initWithStyle:UITableViewStylePlain];
     [self.navigationController pushViewController:detailsViewController animated:animated];
 }
 

@@ -26,6 +26,10 @@
 
 #import "LoginViewController.h"
 
+#import "BCBeacon.h"
+
+@import CoreLocation;
+
 @implementation AppDelegate
 
 #pragma mark -
@@ -38,7 +42,7 @@
     // ****************************************************************************
     // Fill in with your Parse credentials:
     // ****************************************************************************
-    // [Parse setApplicationId:@"your_application_id" clientKey:@"your_client_key"];
+     [Parse setApplicationId:@"bbvNJHfvOXZ33SwTCYAq08pqe8MkmgALRI9NZC5f" clientKey:@"4oc2kven0e6miA7k6eYeeHNjicFsyhqOZYkeTXc7"];
 
     // ****************************************************************************
     // Your Facebook application id is configured in Info.plist.
@@ -49,7 +53,9 @@
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[LoginViewController alloc] init]];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-
+    if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]){
+        [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
+    }
     return YES;
 }
 
@@ -76,6 +82,62 @@
      See also applicationDidEnterBackground:.
      */
     [[PFFacebookUtils session] close];
+}
+
+
+- (CLBeaconRegion *)beaconRegionWithItem:(BCBeacon *)item {
+    CLBeaconRegion *beaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:item.uuid
+                                                                           major:item.majorValue
+                                                                           minor:item.minorValue
+                                                                      identifier:item.name];
+    //    CLBeaconRegion *beaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:item.uuid
+    //                                                                      identifier:item.name];
+    return beaconRegion;
+}
+
+- (void)startMonitoringItem:(BCBeacon *)item {
+    CLBeaconRegion *beaconRegion = [self beaconRegionWithItem:item];
+    [self.locationManager startMonitoringForRegion:beaconRegion];
+    [self.locationManager startRangingBeaconsInRegion:beaconRegion];
+}
+
+-(void)sendLocalNotificationWithMessage:(NSString*)message {
+    if ([[UIApplication sharedApplication] applicationState] == UIApplicationStateActive) {
+        UIAlertView *theAlert = [[UIAlertView alloc] initWithTitle:@"App Reunião"
+                                                           message:message
+                                                          delegate:nil
+                                                 cancelButtonTitle:@"OK"
+                                                 otherButtonTitles:nil];
+        [theAlert show];
+    }
+    else {
+        UILocalNotification *notification = [[UILocalNotification alloc] init];
+        notification.alertBody = message;
+        [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+    }
+}
+#pragma mark CLLocationManagerDelegate
+
+- (void)locationManager:(CLLocationManager *)manager monitoringDidFailForRegion:(CLRegion *)region withError:(NSError *)error {
+    NSLog(@"Failed monitoring region: %@", error);
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+    NSLog(@"Location manager failed: %@", error);
+}
+
+-(void)locationManager:(CLLocationManager *)manager didRangeBeacons:
+(NSArray *)beacons inRegion:(CLBeaconRegion *)region {
+    NSString *message = @"";
+    if(beacons.count > 0) {
+        CLBeacon *nearestBeacon = beacons.firstObject;
+        switch(nearestBeacon.proximity) {
+            case CLProximityUnknown:
+                return;
+            default:
+                break;
+        }
+    }
 }
 
 @end

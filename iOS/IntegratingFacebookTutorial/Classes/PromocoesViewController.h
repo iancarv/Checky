@@ -21,7 +21,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UserDetailsViewController : UITableViewController <NSURLConnectionDelegate>
+@interface PromocoesViewController : UITableViewController <NSURLConnectionDelegate>
 
 // UITableView header view properties
 @property (nonatomic, strong) IBOutlet UIView *headerView;
@@ -29,7 +29,8 @@
 @property (nonatomic, strong) IBOutlet UIImageView *headerImageView;
 
 // UITableView row data properties
-@property (nonatomic, strong) NSArray *rowTitleArray;
-@property (nonatomic, strong) NSMutableArray *rowDataArray;
+@property (nonatomic, strong) NSArray *offersArray;
 
+
+@property (assign) NSInteger selectedCell;
 @end
