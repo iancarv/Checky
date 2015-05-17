@@ -7,16 +7,60 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		30C949AC1829561000B17666 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30C949AB1829561000B17666 /* FacebookSDK.framework */; };
+		2799818E0ABAC2415E3DED68 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B1A8C779AA48521E50C9E259 /* libPods.a */; };
+		377F9B651B08174800B8363D /* PromocoesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8103BCD819AD217900BCF4C7 /* PromocoesViewController.m */; };
+		377F9B661B08174800B8363D /* OfferTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 378BC3C31B07C62500C43E38 /* OfferTableCell.m */; };
+		377F9B671B08174800B8363D /* BCBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 378BC3BC1B07BD9300C43E38 /* BCBeacon.m */; };
+		377F9B681B08174800B8363D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8103BCD619AD217900BCF4C7 /* LoginViewController.m */; };
+		377F9B691B08174800B8363D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8103BD0B19AD21C300BCF4C7 /* main.m */; };
+		377F9B6A1B08174800B8363D /* LojasTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 378BC3C61B07ECE300C43E38 /* LojasTableViewController.m */; };
+		377F9B6B1B08174800B8363D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8103BCD419AD217900BCF4C7 /* AppDelegate.m */; };
+		377F9B6D1B08174800B8363D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D10F48216DD68E000690A0F /* CoreLocation.framework */; };
+		377F9B6F1B08174800B8363D /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4250169161BBAE400474BCD /* StoreKit.framework */; };
+		377F9B701B08174800B8363D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C425016F161BBAEE00474BCD /* libz.dylib */; };
+		377F9B711B08174800B8363D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4DA7A0714D334F30055F672 /* AudioToolbox.framework */; };
+		377F9B721B08174800B8363D /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4DA7A0814D334F30055F672 /* CFNetwork.framework */; };
+		377F9B741B08174800B8363D /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4DA7A0A14D334F30055F672 /* MobileCoreServices.framework */; };
+		377F9B751B08174800B8363D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4DA7A0B14D334F30055F672 /* QuartzCore.framework */; };
+		377F9B761B08174800B8363D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4DA7A0C14D334F30055F672 /* Security.framework */; };
+		377F9B781B08174800B8363D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4DA7A0D14D334F30055F672 /* SystemConfiguration.framework */; };
+		377F9B791B08174800B8363D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4DA79EE14D3345A0055F672 /* UIKit.framework */; };
+		377F9B7A1B08174800B8363D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4DA79F014D3345A0055F672 /* Foundation.framework */; };
+		377F9B7C1B08174800B8363D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4DA79F214D3345A0055F672 /* CoreGraphics.framework */; };
+		377F9B7E1B08174800B8363D /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8103BCE319AD217900BCF4C7 /* Icon.png */; };
+		377F9B7F1B08174800B8363D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8103BD0719AD21C300BCF4C7 /* InfoPlist.strings */; };
+		377F9B801B08174800B8363D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8103BCE019AD217900BCF4C7 /* Default@2x.png */; };
+		377F9B811B08174800B8363D /* login-button-small-pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 8103BCE519AD217900BCF4C7 /* login-button-small-pressed.png */; };
+		377F9B821B08174800B8363D /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8103BCE919AD217900BCF4C7 /* LoginViewController.xib */; };
+		377F9B831B08174800B8363D /* cup-of-coffe-latte-on-coffee-beans-oleksiy-maksymenko.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 378BC3C01B07C51500C43E38 /* cup-of-coffe-latte-on-coffee-beans-oleksiy-maksymenko.jpg */; };
+		377F9B841B08174800B8363D /* login-button-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8103BCE819AD217900BCF4C7 /* login-button-small@2x.png */; };
+		377F9B851B08174800B8363D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 8103BCDF19AD217900BCF4C7 /* Default.png */; };
+		377F9B861B08174800B8363D /* BCConstants.h in Resources */ = {isa = PBXBuildFile; fileRef = 378BC3C81B080B8400C43E38 /* BCConstants.h */; };
+		377F9B871B08174800B8363D /* OfferTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 378BC3BE1B07C23D00C43E38 /* OfferTableCell.xib */; };
+		377F9B881B08174800B8363D /* login-button-small-pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8103BCE619AD217900BCF4C7 /* login-button-small-pressed@2x.png */; };
+		377F9B891B08174800B8363D /* TableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8103BCEA19AD217900BCF4C7 /* TableHeaderView.xib */; };
+		377F9B8A1B08174800B8363D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8103BCDE19AD217900BCF4C7 /* Default-568h@2x.png */; };
+		377F9B8B1B08174800B8363D /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8103BCE419AD217900BCF4C7 /* Icon@2x.png */; };
+		377F9B8C1B08174800B8363D /* login-button-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 8103BCE719AD217900BCF4C7 /* login-button-small.png */; };
+		377F9B9A1B081CE200B8363D /* houses_0000_forrst.png in Resources */ = {isa = PBXBuildFile; fileRef = 377F9B941B081CE100B8363D /* houses_0000_forrst.png */; };
+		377F9B9B1B081CE200B8363D /* houses_0001_rss.png in Resources */ = {isa = PBXBuildFile; fileRef = 377F9B951B081CE200B8363D /* houses_0001_rss.png */; };
+		377F9B9C1B081CE200B8363D /* houses_0002_dribbble.png in Resources */ = {isa = PBXBuildFile; fileRef = 377F9B961B081CE200B8363D /* houses_0002_dribbble.png */; };
+		377F9B9D1B081CE200B8363D /* houses_0003_lastfm.png in Resources */ = {isa = PBXBuildFile; fileRef = 377F9B971B081CE200B8363D /* houses_0003_lastfm.png */; };
+		377F9B9E1B081CE200B8363D /* houses_0004_Twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 377F9B981B081CE200B8363D /* houses_0004_Twitter.png */; };
+		377F9B9F1B081CE200B8363D /* houses_0005_Facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 377F9B991B081CE200B8363D /* houses_0005_Facebook.png */; };
+		377F9BA21B0830E500B8363D /* TopAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 377F9BA11B0830E500B8363D /* TopAnnotationView.m */; };
+		377F9BAA1B08491B00B8363D /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 377F9BA41B08491B00B8363D /* Parse.framework */; };
+		377F9BAD1B08491B00B8363D /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 377F9BA71B08491B00B8363D /* ParseFacebookUtilsV4.framework */; };
+		377F9BAE1B08491B00B8363D /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 377F9BA81B08491B00B8363D /* ParseUI.framework */; };
 		378BC3BD1B07BD9300C43E38 /* BCBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 378BC3BC1B07BD9300C43E38 /* BCBeacon.m */; };
 		378BC3BF1B07C23E00C43E38 /* OfferTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 378BC3BE1B07C23D00C43E38 /* OfferTableCell.xib */; };
 		378BC3C11B07C51500C43E38 /* cup-of-coffe-latte-on-coffee-beans-oleksiy-maksymenko.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 378BC3C01B07C51500C43E38 /* cup-of-coffe-latte-on-coffee-beans-oleksiy-maksymenko.jpg */; };
 		378BC3C41B07C62500C43E38 /* OfferTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 378BC3C31B07C62500C43E38 /* OfferTableCell.m */; };
 		378BC3C71B07ECE300C43E38 /* LojasTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 378BC3C61B07ECE300C43E38 /* LojasTableViewController.m */; };
+		378BC3C91B080E9B00C43E38 /* BCConstants.h in Resources */ = {isa = PBXBuildFile; fileRef = 378BC3C81B080B8400C43E38 /* BCConstants.h */; };
+		37ED59AC1B0852EC00072B9D /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 37ED59AB1B0852EC00072B9D /* libsqlite3.dylib */; };
+		37ED59AE1B0852F800072B9D /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 37ED59AD1B0852F800072B9D /* libsqlite3.0.dylib */; };
 		6D10F48316DD68E000690A0F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D10F48216DD68E000690A0F /* CoreLocation.framework */; };
-		8103BCCD19AD1F8900BCF4C7 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8103BCCB19AD1F8900BCF4C7 /* Bolts.framework */; };
-		8103BCCE19AD1F8900BCF4C7 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8103BCCC19AD1F8900BCF4C7 /* ParseFacebookUtils.framework */; };
-		8103BCD019AD1F9800BCF4C7 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8103BCCF19AD1F9800BCF4C7 /* Parse.framework */; };
 		8103BCEB19AD217900BCF4C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8103BCD419AD217900BCF4C7 /* AppDelegate.m */; };
 		8103BCEC19AD217900BCF4C7 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8103BCD619AD217900BCF4C7 /* LoginViewController.m */; };
 		8103BCED19AD217900BCF4C7 /* PromocoesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8103BCD819AD217900BCF4C7 /* PromocoesViewController.m */; };
@@ -47,7 +91,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		30C949AB1829561000B17666 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		376F9E131B0849BA0017C358 /* IntegratingFacebookTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntegratingFacebookTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		376F9E141B0849BA0017C358 /* IntegratingFacebookTutorial copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IntegratingFacebookTutorial copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		377F9B911B08174A00B8363D /* IntegratingFacebookTutorial copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "IntegratingFacebookTutorial copy-Info.plist"; path = "/Users/Trinity/Dropbox/Jobs/2015/Hack/Checky/iOS/IntegratingFacebookTutorial copy-Info.plist"; sourceTree = "<absolute>"; };
+		377F9B941B081CE100B8363D /* houses_0000_forrst.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = houses_0000_forrst.png; sourceTree = "<group>"; };
+		377F9B951B081CE200B8363D /* houses_0001_rss.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = houses_0001_rss.png; sourceTree = "<group>"; };
+		377F9B961B081CE200B8363D /* houses_0002_dribbble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = houses_0002_dribbble.png; sourceTree = "<group>"; };
+		377F9B971B081CE200B8363D /* houses_0003_lastfm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = houses_0003_lastfm.png; sourceTree = "<group>"; };
+		377F9B981B081CE200B8363D /* houses_0004_Twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = houses_0004_Twitter.png; sourceTree = "<group>"; };
+		377F9B991B081CE200B8363D /* houses_0005_Facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = houses_0005_Facebook.png; sourceTree = "<group>"; };
+		377F9BA01B0830E500B8363D /* TopAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopAnnotationView.h; sourceTree = "<group>"; };
+		377F9BA11B0830E500B8363D /* TopAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopAnnotationView.m; sourceTree = "<group>"; };
+		377F9BA41B08491B00B8363D /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		377F9BA71B08491B00B8363D /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
+		377F9BA81B08491B00B8363D /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		378BC3BB1B07BD9300C43E38 /* BCBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCBeacon.h; sourceTree = "<group>"; };
 		378BC3BC1B07BD9300C43E38 /* BCBeacon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCBeacon.m; sourceTree = "<group>"; };
 		378BC3BE1B07C23D00C43E38 /* OfferTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OfferTableCell.xib; sourceTree = "<group>"; };
@@ -56,10 +113,12 @@
 		378BC3C31B07C62500C43E38 /* OfferTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfferTableCell.m; sourceTree = "<group>"; };
 		378BC3C51B07ECE300C43E38 /* LojasTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LojasTableViewController.h; sourceTree = "<group>"; };
 		378BC3C61B07ECE300C43E38 /* LojasTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LojasTableViewController.m; sourceTree = "<group>"; };
+		378BC3C81B080B8400C43E38 /* BCConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BCConstants.h; sourceTree = "<group>"; };
+		37ED59AB1B0852EC00072B9D /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		37ED59AD1B0852F800072B9D /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		402C121D09393AB922363783 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		577E1B4C395B1124F96097EB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		6D10F48216DD68E000690A0F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		8103BCCB19AD1F8900BCF4C7 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		8103BCCC19AD1F8900BCF4C7 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
-		8103BCCF19AD1F9800BCF4C7 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		8103BCD319AD217900BCF4C7 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8103BCD419AD217900BCF4C7 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		8103BCD519AD217900BCF4C7 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -81,9 +140,9 @@
 		8103BD0919AD21C300BCF4C7 /* IntegratingFacebookTutorial-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "IntegratingFacebookTutorial-Info.plist"; sourceTree = "<group>"; };
 		8103BD0A19AD21C300BCF4C7 /* IntegratingFacebookTutorial-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IntegratingFacebookTutorial-Prefix.pch"; sourceTree = "<group>"; };
 		8103BD0B19AD21C300BCF4C7 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B1A8C779AA48521E50C9E259 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4250169161BBAE400474BCD /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		C425016F161BBAEE00474BCD /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		D4DA79EA14D3345A0055F672 /* IntegratingFacebookTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntegratingFacebookTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4DA79EE14D3345A0055F672 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D4DA79F014D3345A0055F672 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D4DA79F214D3345A0055F672 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -96,26 +155,47 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		377F9B6C1B08174800B8363D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				377F9B6D1B08174800B8363D /* CoreLocation.framework in Frameworks */,
+				377F9B6F1B08174800B8363D /* StoreKit.framework in Frameworks */,
+				377F9B701B08174800B8363D /* libz.dylib in Frameworks */,
+				377F9B711B08174800B8363D /* AudioToolbox.framework in Frameworks */,
+				377F9B721B08174800B8363D /* CFNetwork.framework in Frameworks */,
+				377F9B741B08174800B8363D /* MobileCoreServices.framework in Frameworks */,
+				377F9B751B08174800B8363D /* QuartzCore.framework in Frameworks */,
+				377F9B761B08174800B8363D /* Security.framework in Frameworks */,
+				377F9B781B08174800B8363D /* SystemConfiguration.framework in Frameworks */,
+				377F9B791B08174800B8363D /* UIKit.framework in Frameworks */,
+				377F9B7A1B08174800B8363D /* Foundation.framework in Frameworks */,
+				377F9B7C1B08174800B8363D /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D4DA79E714D3345A0055F672 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8103BCCD19AD1F8900BCF4C7 /* Bolts.framework in Frameworks */,
-				C425016D161BBAE400474BCD /* StoreKit.framework in Frameworks */,
+				37ED59AE1B0852F800072B9D /* libsqlite3.0.dylib in Frameworks */,
+				37ED59AC1B0852EC00072B9D /* libsqlite3.dylib in Frameworks */,
+				377F9BAE1B08491B00B8363D /* ParseUI.framework in Frameworks */,
 				6D10F48316DD68E000690A0F /* CoreLocation.framework in Frameworks */,
+				C425016D161BBAE400474BCD /* StoreKit.framework in Frameworks */,
 				C4250170161BBAEE00474BCD /* libz.dylib in Frameworks */,
 				D4DA7A0E14D334F30055F672 /* AudioToolbox.framework in Frameworks */,
 				D4DA7A0F14D334F30055F672 /* CFNetwork.framework in Frameworks */,
-				8103BCD019AD1F9800BCF4C7 /* Parse.framework in Frameworks */,
 				D4DA7A1114D334F30055F672 /* MobileCoreServices.framework in Frameworks */,
 				D4DA7A1214D334F30055F672 /* QuartzCore.framework in Frameworks */,
 				D4DA7A1314D334F30055F672 /* Security.framework in Frameworks */,
-				30C949AC1829561000B17666 /* FacebookSDK.framework in Frameworks */,
 				D4DA7A1414D334F30055F672 /* SystemConfiguration.framework in Frameworks */,
+				377F9BAA1B08491B00B8363D /* Parse.framework in Frameworks */,
 				D4DA79EF14D3345A0055F672 /* UIKit.framework in Frameworks */,
 				D4DA79F114D3345A0055F672 /* Foundation.framework in Frameworks */,
-				8103BCCE19AD1F8900BCF4C7 /* ParseFacebookUtils.framework in Frameworks */,
+				377F9BAD1B08491B00B8363D /* ParseFacebookUtilsV4.framework in Frameworks */,
 				D4DA79F314D3345A0055F672 /* CoreGraphics.framework in Frameworks */,
+				2799818E0ABAC2415E3DED68 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,10 +224,9 @@
 		8103BCD119AD1F9E00BCF4C7 /* User Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8103BCCF19AD1F9800BCF4C7 /* Parse.framework */,
-				8103BCCB19AD1F8900BCF4C7 /* Bolts.framework */,
-				8103BCCC19AD1F8900BCF4C7 /* ParseFacebookUtils.framework */,
-				30C949AB1829561000B17666 /* FacebookSDK.framework */,
+				377F9BA41B08491B00B8363D /* Parse.framework */,
+				377F9BA71B08491B00B8363D /* ParseFacebookUtilsV4.framework */,
+				377F9BA81B08491B00B8363D /* ParseUI.framework */,
 			);
 			name = "User Frameworks";
 			sourceTree = "<group>";
@@ -155,6 +234,7 @@
 		8103BCD219AD217900BCF4C7 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				378BC3C81B080B8400C43E38 /* BCConstants.h */,
 				378BC3BB1B07BD9300C43E38 /* BCBeacon.h */,
 				378BC3BC1B07BD9300C43E38 /* BCBeacon.m */,
 				8103BCD319AD217900BCF4C7 /* AppDelegate.h */,
@@ -167,6 +247,8 @@
 				8103BCD819AD217900BCF4C7 /* PromocoesViewController.m */,
 				378BC3C21B07C62500C43E38 /* OfferTableCell.h */,
 				378BC3C31B07C62500C43E38 /* OfferTableCell.m */,
+				377F9BA01B0830E500B8363D /* TopAnnotationView.h */,
+				377F9BA11B0830E500B8363D /* TopAnnotationView.m */,
 			);
 			name = Classes;
 			path = IntegratingFacebookTutorial/Classes;
@@ -175,6 +257,12 @@
 		8103BCDD19AD217900BCF4C7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				377F9B941B081CE100B8363D /* houses_0000_forrst.png */,
+				377F9B951B081CE200B8363D /* houses_0001_rss.png */,
+				377F9B961B081CE200B8363D /* houses_0002_dribbble.png */,
+				377F9B971B081CE200B8363D /* houses_0003_lastfm.png */,
+				377F9B981B081CE200B8363D /* houses_0004_Twitter.png */,
+				377F9B991B081CE200B8363D /* houses_0005_Facebook.png */,
 				378BC3C01B07C51500C43E38 /* cup-of-coffe-latte-on-coffee-beans-oleksiy-maksymenko.jpg */,
 				8103BCE919AD217900BCF4C7 /* LoginViewController.xib */,
 				8103BCEA19AD217900BCF4C7 /* TableHeaderView.xib */,
@@ -212,37 +300,63 @@
 				8103BD0619AD21C300BCF4C7 /* Supporting Files */,
 				8103BCDD19AD217900BCF4C7 /* Resources */,
 				D4DA79ED14D3345A0055F672 /* Frameworks */,
-				D4DA79EB14D3345A0055F672 /* Products */,
+				377F9B911B08174A00B8363D /* IntegratingFacebookTutorial copy-Info.plist */,
+				E042DB81930F1F9D2E97682A /* Pods */,
+				376F9E131B0849BA0017C358 /* IntegratingFacebookTutorial.app */,
+				376F9E141B0849BA0017C358 /* IntegratingFacebookTutorial copy.app */,
 			);
-			sourceTree = "<group>";
-		};
-		D4DA79EB14D3345A0055F672 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				D4DA79EA14D3345A0055F672 /* IntegratingFacebookTutorial.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		D4DA79ED14D3345A0055F672 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				37ED59AD1B0852F800072B9D /* libsqlite3.0.dylib */,
+				37ED59AB1B0852EC00072B9D /* libsqlite3.dylib */,
 				8103BCD119AD1F9E00BCF4C7 /* User Frameworks */,
 				8103BCCA19AD1EF000BCF4C7 /* System Frameworks */,
+				B1A8C779AA48521E50C9E259 /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E042DB81930F1F9D2E97682A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				402C121D09393AB922363783 /* Pods.debug.xcconfig */,
+				577E1B4C395B1124F96097EB /* Pods.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		377F9B631B08174800B8363D /* Checky */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 377F9B8D1B08174800B8363D /* Build configuration list for PBXNativeTarget "Checky" */;
+			buildPhases = (
+				377F9B641B08174800B8363D /* Sources */,
+				377F9B6C1B08174800B8363D /* Frameworks */,
+				377F9B7D1B08174800B8363D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Checky;
+			productName = IntegratingFacebookTutorial;
+			productReference = 376F9E141B0849BA0017C358 /* IntegratingFacebookTutorial copy.app */;
+			productType = "com.apple.product-type.application";
+		};
 		D4DA79E914D3345A0055F672 /* IntegratingFacebookTutorial */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D4DA7A0214D3345A0055F672 /* Build configuration list for PBXNativeTarget "IntegratingFacebookTutorial" */;
 			buildPhases = (
+				2831878DDA510F60A88CC01F /* Check Pods Manifest.lock */,
 				D4DA79E614D3345A0055F672 /* Sources */,
 				D4DA79E714D3345A0055F672 /* Frameworks */,
 				D4DA79E814D3345A0055F672 /* Resources */,
+				8B147B571FC1B16BDA61A112 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -250,7 +364,7 @@
 			);
 			name = IntegratingFacebookTutorial;
 			productName = IntegratingFacebookTutorial;
-			productReference = D4DA79EA14D3345A0055F672 /* IntegratingFacebookTutorial.app */;
+			productReference = 376F9E131B0849BA0017C358 /* IntegratingFacebookTutorial.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -260,6 +374,15 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0510;
+				TargetAttributes = {
+					D4DA79E914D3345A0055F672 = {
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+				};
 			};
 			buildConfigurationList = D4DA79E414D3345A0055F672 /* Build configuration list for PBXProject "IntegratingFacebookTutorial" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -269,16 +392,39 @@
 				en,
 			);
 			mainGroup = D4DA79DF14D3345A0055F672;
-			productRefGroup = D4DA79EB14D3345A0055F672 /* Products */;
+			productRefGroup = D4DA79DF14D3345A0055F672;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				D4DA79E914D3345A0055F672 /* IntegratingFacebookTutorial */,
+				377F9B631B08174800B8363D /* Checky */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		377F9B7D1B08174800B8363D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				377F9B7E1B08174800B8363D /* Icon.png in Resources */,
+				377F9B7F1B08174800B8363D /* InfoPlist.strings in Resources */,
+				377F9B801B08174800B8363D /* Default@2x.png in Resources */,
+				377F9B811B08174800B8363D /* login-button-small-pressed.png in Resources */,
+				377F9B821B08174800B8363D /* LoginViewController.xib in Resources */,
+				377F9B831B08174800B8363D /* cup-of-coffe-latte-on-coffee-beans-oleksiy-maksymenko.jpg in Resources */,
+				377F9B841B08174800B8363D /* login-button-small@2x.png in Resources */,
+				377F9B851B08174800B8363D /* Default.png in Resources */,
+				377F9B861B08174800B8363D /* BCConstants.h in Resources */,
+				377F9B871B08174800B8363D /* OfferTableCell.xib in Resources */,
+				377F9B881B08174800B8363D /* login-button-small-pressed@2x.png in Resources */,
+				377F9B891B08174800B8363D /* TableHeaderView.xib in Resources */,
+				377F9B8A1B08174800B8363D /* Default-568h@2x.png in Resources */,
+				377F9B8B1B08174800B8363D /* Icon@2x.png in Resources */,
+				377F9B8C1B08174800B8363D /* login-button-small.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D4DA79E814D3345A0055F672 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -287,22 +433,76 @@
 				8103BD0C19AD21C300BCF4C7 /* InfoPlist.strings in Resources */,
 				8103BCF219AD217900BCF4C7 /* Default@2x.png in Resources */,
 				8103BCF619AD217900BCF4C7 /* login-button-small-pressed.png in Resources */,
+				377F9B9C1B081CE200B8363D /* houses_0002_dribbble.png in Resources */,
 				8103BCFA19AD217900BCF4C7 /* LoginViewController.xib in Resources */,
 				378BC3C11B07C51500C43E38 /* cup-of-coffe-latte-on-coffee-beans-oleksiy-maksymenko.jpg in Resources */,
 				8103BCF919AD217900BCF4C7 /* login-button-small@2x.png in Resources */,
 				8103BCF119AD217900BCF4C7 /* Default.png in Resources */,
+				378BC3C91B080E9B00C43E38 /* BCConstants.h in Resources */,
+				377F9B9E1B081CE200B8363D /* houses_0004_Twitter.png in Resources */,
 				378BC3BF1B07C23E00C43E38 /* OfferTableCell.xib in Resources */,
+				377F9B9F1B081CE200B8363D /* houses_0005_Facebook.png in Resources */,
+				377F9B9B1B081CE200B8363D /* houses_0001_rss.png in Resources */,
 				8103BCF719AD217900BCF4C7 /* login-button-small-pressed@2x.png in Resources */,
 				8103BCFB19AD217900BCF4C7 /* TableHeaderView.xib in Resources */,
 				8103BCF019AD217900BCF4C7 /* Default-568h@2x.png in Resources */,
 				8103BCF519AD217900BCF4C7 /* Icon@2x.png in Resources */,
+				377F9B9A1B081CE200B8363D /* houses_0000_forrst.png in Resources */,
+				377F9B9D1B081CE200B8363D /* houses_0003_lastfm.png in Resources */,
 				8103BCF819AD217900BCF4C7 /* login-button-small.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2831878DDA510F60A88CC01F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8B147B571FC1B16BDA61A112 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		377F9B641B08174800B8363D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				377F9B651B08174800B8363D /* PromocoesViewController.m in Sources */,
+				377F9B661B08174800B8363D /* OfferTableCell.m in Sources */,
+				377F9B671B08174800B8363D /* BCBeacon.m in Sources */,
+				377F9B681B08174800B8363D /* LoginViewController.m in Sources */,
+				377F9B691B08174800B8363D /* main.m in Sources */,
+				377F9B6A1B08174800B8363D /* LojasTableViewController.m in Sources */,
+				377F9B6B1B08174800B8363D /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D4DA79E614D3345A0055F672 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -314,6 +514,7 @@
 				8103BD0E19AD21C300BCF4C7 /* main.m in Sources */,
 				378BC3C71B07ECE300C43E38 /* LojasTableViewController.m in Sources */,
 				8103BCEB19AD217900BCF4C7 /* AppDelegate.m in Sources */,
+				377F9BA21B0830E500B8363D /* TopAnnotationView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,6 +532,36 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		377F9B8E1B08174800B8363D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IntegratingFacebookTutorial/Supporting Files/IntegratingFacebookTutorial-Prefix.pch";
+				INFOPLIST_FILE = "IntegratingFacebookTutorial copy-Info.plist";
+				PRODUCT_NAME = "IntegratingFacebookTutorial copy";
+			};
+			name = Debug;
+		};
+		377F9B8F1B08174800B8363D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IntegratingFacebookTutorial/Supporting Files/IntegratingFacebookTutorial-Prefix.pch";
+				INFOPLIST_FILE = "IntegratingFacebookTutorial copy-Info.plist";
+				PRODUCT_NAME = "IntegratingFacebookTutorial copy";
+			};
+			name = Release;
+		};
 		D4DA7A0014D3345A0055F672 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -401,6 +632,7 @@
 		};
 		D4DA7A0314D3345A0055F672 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 402C121D09393AB922363783 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -416,6 +648,7 @@
 		};
 		D4DA7A0414D3345A0055F672 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 577E1B4C395B1124F96097EB /* Pods.release.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -432,6 +665,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		377F9B8D1B08174800B8363D /* Build configuration list for PBXNativeTarget "Checky" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				377F9B8E1B08174800B8363D /* Debug */,
+				377F9B8F1B08174800B8363D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D4DA79E414D3345A0055F672 /* Build configuration list for PBXProject "IntegratingFacebookTutorial" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

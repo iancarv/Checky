@@ -20,10 +20,13 @@
  */
 #import "PromocoesViewController.h"
 #import "OfferTableCell.h"
-
+#import "BCConstants.h"
+#import "BCBeacon.h"
+@import CoreLocation;
 
 #import <Parse/Parse.h>
 #import <ParseFacebookUtils/PFFacebookUtils.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 @implementation PromocoesViewController
 
@@ -47,18 +50,67 @@
     [super viewDidLoad];
     self.tableView.delegate = self;
     self.tableView.backgroundColor = [UIColor colorWithWhite:250.0f/255.0f alpha:1.0f];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(rangedBeacon:) name:kDidRangeBeaconNotification object:nil];
 //    [self.tableView setBackgroundColor:[UIColor darkGrayColor]];
     // Load table header view from nib
 //    [[NSBundle mainBundle] loadNibNamed:@"TableHeaderView" owner:self options:nil];
 
     // Add logout navigation bar button
-    UIBarButtonItem *logoutButton = [[UIBarButtonItem alloc] initWithTitle:@"Log Out"
-                                                                     style:UIBarButtonItemStyleBordered
-                                                                    target:self
-                                                                    action:@selector(logoutButtonAction:)];
+//    UIBarButtonItem *logoutButton = [[UIBarButtonItem alloc] initWithTitle:@"Log Out"
+//                                                                     style:UIBarButtonItemStyleBordered
+//                                                                    target:self
+//                                                                    action:@selector(logoutButtonAction:)];
     [self.navigationController.navigationBar setTranslucent:YES];
-    self.navigationItem.leftBarButtonItem = logoutButton;
+//    self.navigationItem.leftBarButtonItem = logoutButton;
     [self _loadData];
+}
+
+-(void)rangedBeacon:(NSNotification *)notification {
+    
+    CLBeacon *nearestBeacon = (CLBeacon *)notification.userInfo[kBeaconKey];
+    switch(nearestBeacon.proximity) {
+        case CLProximityImmediate:
+            NSLog(@"haha");
+            if (!_theAlert.visible) {
+                 _theAlert = [[UIAlertView alloc] initWithTitle:@"Offer Warning"
+                                                                   message:@"Would like to like this offer for some amazing reward?"
+                                                                  delegate:nil
+                                                         cancelButtonTitle:@"No, Thanks"
+                                                         otherButtonTitles:@"HELL, YES", nil];
+                _theAlert.delegate = self;
+                [_theAlert show];
+            }
+            break;
+        default:
+            NSLog(@"Deu pau");
+    }
+}
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    NSLog(@"Index %d", buttonIndex);  
+    for (PFObject *obj in _offersArray) {
+        if (obj[@"PostID"]) {
+            NSLog(obj[@"PostID"]);
+            NSString *graphPath = [NSString stringWithFormat:@"/%@/likes", obj[@"PostID"]];
+            FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc]
+                                          initWithGraphPath:graphPath
+                                          parameters:nil
+                                          HTTPMethod:@"POST"];
+            [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection,
+                                                  id result,
+                                                  NSError *error) {
+                NSLog(@"%@", result);
+                NSLog(@"%@", error);
+                // Handle the result
+            }];
+        }
+    }
+}
+- (void)createLikeNotification {
+    
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:kDidRangeBeaconNotification object:nil];
 }
 
 #pragma mark -
@@ -79,9 +131,16 @@
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"OfferTableCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
-    cell.descriptionView.text = _offersArray[indexPath.row][@"Desc"];
+    cell.descriptionView.text = _offersArray[indexPath.row][@"Description"];
     [cell.descriptionView setTextColor:[UIColor whiteColor]];
-    cell.titleLabel.text = _offersArray[indexPath.row][@"Titulo"];
+    cell.titleLabel.text = _offersArray[indexPath.row][@"Title"];
+    PFFile *userImageFile = _offersArray[indexPath.row][@"Image"];
+    [userImageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
+        if (!error) {
+            UIImage *image = [UIImage imageWithData:imageData];
+            cell.imgView.image = image;
+        }
+    }];
     return cell;
 }
 

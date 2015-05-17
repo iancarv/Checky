@@ -22,11 +22,13 @@
 #import "AppDelegate.h"
 
 #import <Parse/Parse.h>
-#import <ParseFacebookUtils/PFFacebookUtils.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <ParseFacebookUtilsV4/PFFacebookUtils.h>
 
 #import "LoginViewController.h"
 
 #import "BCBeacon.h"
+#import "BCConstants.h"
 
 @import CoreLocation;
 
@@ -38,7 +40,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
+    _found = false;
     // ****************************************************************************
     // Fill in with your Parse credentials:
     // ****************************************************************************
@@ -47,7 +49,7 @@
     // ****************************************************************************
     // Your Facebook application id is configured in Info.plist.
     // ****************************************************************************
-    [PFFacebookUtils initializeFacebook];
+    [PFFacebookUtils initializeFacebookWithApplicationLaunchOptions:launchOptions];
 
     // Override point for customization after application launch.
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[LoginViewController alloc] init]];
@@ -56,23 +58,37 @@
     if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]){
         [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
     }
+    NSUUID *uuid = [[NSUUID alloc] initWithUUIDString:kBeaconUUID];
+    BCBeacon *_item = [[BCBeacon alloc] initWithName:kBeaconName uuid:uuid major:kBeaconMajorValue minor:kBeaconMinorValue];
+    NSLog(@"%@", _item.uuid);
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    if([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
+        [self.locationManager requestAlwaysAuthorization];
+    }
+    if([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+        [self.locationManager requestWhenInUseAuthorization];
+    }
+    [self startMonitoringItem:_item];
+    [self.locationManager startUpdatingLocation];
     return YES;
 }
 
 // ****************************************************************************
 // App switching methods to support Facebook Single Sign-On.
 // ****************************************************************************
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
-    return [FBAppCall handleOpenURL:url
-                  sourceApplication:sourceApplication
-                        withSession:[PFFacebookUtils session]];
-} 
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    return [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                          openURL:url
+                                                sourceApplication:sourceApplication
+                                                       annotation:annotation];
+}
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    /*
-     Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-     */
-    [FBAppCall handleDidBecomeActiveWithSession:[PFFacebookUtils session]];
+    [FBSDKAppEvents activateApp];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
@@ -81,7 +97,6 @@
      Save data if appropriate.
      See also applicationDidEnterBackground:.
      */
-    [[PFFacebookUtils session] close];
 }
 
 
@@ -103,7 +118,7 @@
 
 -(void)sendLocalNotificationWithMessage:(NSString*)message {
     if ([[UIApplication sharedApplication] applicationState] == UIApplicationStateActive) {
-        UIAlertView *theAlert = [[UIAlertView alloc] initWithTitle:@"App Reunião"
+        UIAlertView *theAlert = [[UIAlertView alloc] initWithTitle:@"Offer Warning"
                                                            message:message
                                                           delegate:nil
                                                  cancelButtonTitle:@"OK"
@@ -125,17 +140,32 @@
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
     NSLog(@"Location manager failed: %@", error);
 }
+//[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(postWasCreated:) name:CCBCacambaCreatedNotification object:nil];
 
 -(void)locationManager:(CLLocationManager *)manager didRangeBeacons:
 (NSArray *)beacons inRegion:(CLBeaconRegion *)region {
-    NSString *message = @"";
+    NSString *message = @"We have a HUGE offer waiting for you";
     if(beacons.count > 0) {
         CLBeacon *nearestBeacon = beacons.firstObject;
-        switch(nearestBeacon.proximity) {
-            case CLProximityUnknown:
-                return;
-            default:
-                break;
+        if ([[UIApplication sharedApplication] applicationState] == UIApplicationStateActive)
+                [[NSNotificationCenter defaultCenter] postNotificationName:kDidRangeBeaconNotification
+                                                                    object:nil
+                                                                  userInfo:@{ kBeaconKey : nearestBeacon } ];
+        else {
+            switch(nearestBeacon.proximity) {
+                case CLProximityUnknown:
+                    _found = NO;
+                    return;
+                case CLProximityFar:
+                    _found = NO;
+                    return;
+                default:
+                    if (!_found) {
+                        _found = YES;
+                        [self sendLocalNotificationWithMessage:message];
+                    }
+                    break;
+            }
         }
     }
 }

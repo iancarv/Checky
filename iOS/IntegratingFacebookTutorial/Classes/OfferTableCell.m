@@ -7,7 +7,6 @@
 //
 
 #import "OfferTableCell.h"
-#import <FacebookSDK/FacebookSDK.h>
 
 @implementation OfferTableCell
 

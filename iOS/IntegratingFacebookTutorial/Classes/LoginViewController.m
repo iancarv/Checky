@@ -22,9 +22,9 @@
 #import "LoginViewController.h"
 
 #import <Parse/Parse.h>
-#import <ParseFacebookUtils/PFFacebookUtils.h>
+#import <ParseFacebookUtilsV4/PFFacebookUtils.h>
 
-#import "PromocoesViewController.h"
+#import "LojasTableViewController.h"
 
 @implementation LoginViewController
 
@@ -56,10 +56,10 @@
 
 - (IBAction)loginButtonTouchHandler:(id)sender  {
     // Set permissions required from the facebook user account
-    NSArray *permissionsArray = @[ @"user_about_me", @"user_relationships", @"user_birthday", @"user_location"];
+    NSArray *permissionsArray = @[ @"user_about_me", @"user_relationships", @"user_birthday", @"user_location", @"publish_actions"];
 
     // Login PFUser using Facebook
-    [PFFacebookUtils logInWithPermissions:permissionsArray block:^(PFUser *user, NSError *error) {
+    [PFFacebookUtils logInInBackgroundWithPublishPermissions:permissionsArray block:^(PFUser *user, NSError *error) {
         [_activityIndicator stopAnimating]; // Hide loading indicator
 
         if (!user) {
@@ -94,7 +94,7 @@
 #pragma mark UserDetailsViewController
 
 - (void)_presentUserDetailsViewControllerAnimated:(BOOL)animated {
-    PromocoesViewController *detailsViewController = [[PromocoesViewController alloc] initWithStyle:UITableViewStylePlain];
+    LojasTableViewController *detailsViewController = [[LojasTableViewController alloc] init];
     [self.navigationController pushViewController:detailsViewController animated:animated];
 }
 

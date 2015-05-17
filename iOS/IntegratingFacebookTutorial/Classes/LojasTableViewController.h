@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface LojasTableViewController : UITableViewController
-
+@import MapKit;
+@interface LojasTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate, MKMapViewDelegate>
+@property (strong, nonatomic) MKMapView *mapView;
+@property (strong, nonatomic) UITableView *tableView;
 @end

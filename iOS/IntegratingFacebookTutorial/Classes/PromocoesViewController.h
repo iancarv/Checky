@@ -21,13 +21,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PromocoesViewController : UITableViewController <NSURLConnectionDelegate>
+@interface PromocoesViewController : UITableViewController <NSURLConnectionDelegate, UIAlertViewDelegate>
 
 // UITableView header view properties
 @property (nonatomic, strong) IBOutlet UIView *headerView;
 @property (nonatomic, strong) IBOutlet UILabel *headerNameLabel;
 @property (nonatomic, strong) IBOutlet UIImageView *headerImageView;
-
+@property (nonatomic, strong) UIAlertView * theAlert;
 // UITableView row data properties
 @property (nonatomic, strong) NSArray *offersArray;
 
