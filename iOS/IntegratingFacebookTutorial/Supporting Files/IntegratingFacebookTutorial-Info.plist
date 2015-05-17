@@ -25,13 +25,9 @@
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
-			<key>CFBundleIdentifier</key>
-			<string></string>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fbYOUR_FACEBOOK_APP_ID</string>
+				<string>fb407680106079301</string>
 			</array>
 		</dict>
 	</array>
@@ -39,6 +35,8 @@
 	<string>1.0</string>
 	<key>FacebookAppID</key>
 	<string>407680106079301</string>
+	<key>FacebookDisplayName</key>
+	<string>Checky</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationAlwaysUsageDescription</key>

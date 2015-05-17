@@ -20,8 +20,10 @@
  */
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
+#import <ParseUI/ParseUI.h>
 
-@interface PromocoesViewController : UITableViewController <NSURLConnectionDelegate, UIAlertViewDelegate>
+@interface PromocoesViewController : PFQueryTableViewController <NSURLConnectionDelegate, UIAlertViewDelegate>
 
 // UITableView header view properties
 @property (nonatomic, strong) IBOutlet UIView *headerView;

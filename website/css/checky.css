@@ -14,6 +14,9 @@
 .add:hover > .hover-img {
 	background-color:#ff5078;
 }
+#addImg {
+	object-fit: contain;
+}
 
 /*.card-content > input {
 	height: 16px !important;

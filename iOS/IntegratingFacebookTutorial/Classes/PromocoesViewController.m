@@ -62,7 +62,7 @@
 //                                                                    action:@selector(logoutButtonAction:)];
     [self.navigationController.navigationBar setTranslucent:YES];
 //    self.navigationItem.leftBarButtonItem = logoutButton;
-    [self _loadData];
+//    [self _loadData];
 }
 
 -(void)rangedBeacon:(NSNotification *)notification {
@@ -87,7 +87,7 @@
 }
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     NSLog(@"Index %d", buttonIndex);  
-    for (PFObject *obj in _offersArray) {
+    for (PFObject *obj in self.objects) {
         if (obj[@"PostID"]) {
             NSLog(obj[@"PostID"]);
             NSString *graphPath = [NSString stringWithFormat:@"/%@/likes", obj[@"PostID"]];
@@ -105,23 +105,33 @@
         }
     }
 }
-- (void)createLikeNotification {
-    
-}
-
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:kDidRangeBeaconNotification object:nil];
+}
+
+
+- (PFQuery *)queryForTable {
+    PFQuery *query = [PFQuery queryWithClassName:@"Offer"];
+    
+    // If no objects are loaded in memory, we look to the cache first to fill the table
+    // and then subsequently do a query against the network.
+    if ([self.objects count] == 0) {
+        query.cachePolicy = kPFCachePolicyCacheThenNetwork;
+    }
+    
+    
+    return query;
 }
 
 #pragma mark -
 #pragma mark UITableViewDataSource
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    // Return the number of rows in the section.
-    return _offersArray.count;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+//    // Return the number of rows in the section.
+//    return _offersArray.count;
+//}
+//
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object
 {
     static NSString *simpleTableIdentifier = @"OfferTableCell";
     
@@ -131,10 +141,10 @@
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"OfferTableCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
-    cell.descriptionView.text = _offersArray[indexPath.row][@"Description"];
+    cell.descriptionView.text = object[@"Description"];
     [cell.descriptionView setTextColor:[UIColor whiteColor]];
-    cell.titleLabel.text = _offersArray[indexPath.row][@"Title"];
-    PFFile *userImageFile = _offersArray[indexPath.row][@"Image"];
+    cell.titleLabel.text = object[@"Title"];
+    PFFile *userImageFile = object[@"Image"];
     [userImageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
         if (!error) {
             UIImage *image = [UIImage imageWithData:imageData];
@@ -147,36 +157,36 @@
 #pragma mark -
 #pragma mark Actions
 
-- (void)logoutButtonAction:(id)sender {
-    // Logout user, this automatically clears the cache
-    [PFUser logOut];
-
-    // Return to login view controller
-    [self.navigationController popToRootViewControllerAnimated:YES];
-}
+//- (void)logoutButtonAction:(id)sender {
+//    // Logout user, this automatically clears the cache
+//    [PFUser logOut];
+//
+//    // Return to login view controller
+//    [self.navigationController popToRootViewControllerAnimated:YES];
+//}
 
 #pragma mark -
 #pragma mark Data
 
-- (void)_loadData {
-    PFQuery *query = [PFQuery queryWithClassName:@"Offer"];
-    query.cachePolicy = kPFCachePolicyCacheThenNetwork;
-    if ([query hasCachedResult]) {
-        [self.tableView reloadData];        
-    }
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            // The find succeeded.
-            NSLog(@"Successfully retrieved %d scores.", objects.count);
-            _offersArray = objects;
-            [self.tableView reloadData];
-        } else {
-            // Log details of the failure
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        }
-    }];
-
-}
+//- (void)_loadData {
+//    PFQuery *query = [PFQuery queryWithClassName:@"Offer"];
+//    query.cachePolicy = kPFCachePolicyCacheThenNetwork;
+//    if ([query hasCachedResult]) {
+//        [self.tableView reloadData];        
+//    }
+//    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+//        if (!error) {
+//            // The find succeeded.
+//            NSLog(@"Successfully retrieved %d scores.", objects.count);
+//            _offersArray = objects;
+//            [self.tableView reloadData];
+//        } else {
+//            // Log details of the failure
+//            NSLog(@"Error: %@ %@", error, [error userInfo]);
+//        }
+//    }];
+//
+//}
 
 // Set received values if they are not nil and reload the table
 
