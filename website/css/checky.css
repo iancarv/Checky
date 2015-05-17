@@ -2,7 +2,21 @@
 	color: black ;
  }
 
-.card-content.regulated {
-	max-height: 200px;
+.card-content {
+	height: 180px;
 	overflow: auto;
 }
+
+.card-image img {
+	  object-fit: cover;
+}
+
+.add:hover > .hover-img {
+	background-color:#ff5078;
+}
+
+/*.card-content > input {
+	height: 16px !important;
+	margin-bottom: 5px;
+
+}*/

@@ -1,0 +1,8 @@
+.card-title.black-color {
+	color: black ;
+ }
+
+.card-content.regulated {
+	max-height: 200px;
+	overflow: auto;
+}

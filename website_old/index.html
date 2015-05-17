@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script type="text/javascript" src="js/underscore.js"></script>
+<script src="http://www.parsecdn.com/js/parse-1.2.13.min.js"></script>
+<link rel=stylesheet type="text/css" href="css/materialize.css">
+<link rel=stylesheet type="text/css" href="css/checky.css">
+<script type="text/javascript" src="js/materialize.js"></script>
+<script type="text/javascript" src="js/checky.js"></script>
+
+</head>
+<body>
+<div id="app">
+  <div class="content">
+    <div class="row"> </div>
+  </div>
+</div>
+
+
+<!-- TEMPLATE -->
+<script type="text/template" id="item-template">
+    <div class="card">
+      <div class="card-image">
+        <img src="img/img.jpg">
+      </div>
+      <div class="card-content regulated">
+        <span class="card-title black-color"><%= _.escape(Title) %></span>
+        <p><%= _.escape(Description) %></p>
+      </div>
+    </div>
+</script>
+
+</body>
+</html>
+

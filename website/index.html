@@ -13,23 +13,43 @@
 <body>
 <div id="app">
   <div class="content">
-    <div class="row"> </div>
+    <hr width="100%" color="black">
+    <div class="row"> 
+      <div class="addbox col s4"> </div>
+    </div>
   </div>
 </div>
 
 
 <!-- TEMPLATE -->
 <script type="text/template" id="item-template">
-    <div class="card">
+    <div class="card added">
       <div class="card-image">
-        <img src="img/img.jpg">
+        <img src= <%= _.escape(Image.url) %> height="200" width="100"/>
+        <img src= "img/x.png" class="remove-offer" style="position: absolute; left: 410px; top: 0; width:20px; height:20px" />
       </div>
-      <div class="card-content regulated">
+      <div class="card-content">
         <span class="card-title black-color"><%= _.escape(Title) %></span>
         <p><%= _.escape(Description) %></p>
       </div>
     </div>
 </script>
+
+<!-- ADD TEMPLATE-->
+<script type="text/template" id="add-template">
+  <div class="card add">
+    <div class="card-image hover-img" id="triggerInput">
+      <img id="addImg" src="img/sign-27080_200.png" height="200" width="100"/>
+    </div>
+    <div class="card-content">
+      <input type="text" id="offer-title" placeholder="Title" />
+      <input type="text" id="offer-description" placeholder="Description" />
+      <input style="display:none;" type="file" id="offer-img" />
+      <button type="button" id="add-offer">New Offer</button>
+    </div>
+  </div>
+</script>
+
 
 </body>
 </html>
